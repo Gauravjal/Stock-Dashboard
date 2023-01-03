@@ -1,0 +1,42 @@
+import React from 'react'
+import {useState,useEffect,useContext} from 'react';
+import StockContext from './context/StockContext.js';
+import FundamentalDiv from './FundamentalDiv.jsx';
+function Details() {
+    const{stockSymbol}=useContext(StockContext)
+  const [details,setDetails]=useState({});
+  useEffect(()=>{
+      const fetchDetails= async()=>{
+        const kkeeyy="SB9I4MIXG3D7OISQ";
+        let API_CALL=`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${kkeeyy}`
+        console.log(API_CALL);
+        await fetch(API_CALL)
+        .then(
+          function(response){
+            //console.log(response.json);
+            return response.json();
+          }
+        )
+        .then(
+          function(detailsa){
+            //console.log("details=",detailsa);
+            setDetails(detailsa);
+          }
+        )
+      }
+      fetchDetails();
+    },[stockSymbol])
+  return (<>
+    <div className=" p-8 border-2 border-neutral-200 bg-blue-200">
+      
+          <FundamentalDiv name="Company Name" child={details.Name}/>
+          <FundamentalDiv name="Market Capitalization" child={details.MarketCapitalization}/>
+          <FundamentalDiv name="Industry" child={details.Industry}/>
+          <FundamentalDiv name="PE Ratio" child={details.PERatio}/>
+          <FundamentalDiv name="EPS" child={details.EPS}/>
+        </div>
+        </>
+  )
+}
+
+export default Details
