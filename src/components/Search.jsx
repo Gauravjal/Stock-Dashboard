@@ -60,7 +60,7 @@ function Search() {
         {input && <button className="position-absolute top-0 right-0 bg-blue-100 px-1" onClick={clear}><MdClear/></button>}
         <span className="shadow-xl flex items-center bg-gray-100 rounded rounded-l-none border-0 px-3 font-bold text-grey-100"><button className="position-absolute top-0 right-0" onClick={updateBestMatches}><FcSearch  className="fill-current"/></button></span>
         <br></br>
-        {input && bestMatches.length>0 ? <DisplayBestMatches results={bestMatches} />:null}
+        {input && bestMatches.length>0 ? <DisplayBestMatches bestMatches={bestMatches} setBestMatches={setBestMatches} />:null}
 
   
     </div>

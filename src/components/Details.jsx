@@ -27,12 +27,16 @@ function Details() {
       fetchDetails();
     },[stockSymbol])
   return (<>
-    <div className=" p-8 border-2 border-neutral-200 bg-blue-200">
+    <div className=" border-2">
       
           <FundamentalDiv name="Company Name" child={details.Name}/>
+          <hr className="h-px py-0 w-100 bg-gray-200 border-0 dark:bg-gray-400"></hr>
           <FundamentalDiv name="Market Capitalization" child={details.MarketCapitalization}/>
+          <hr className="h-px py-0 w-100 bg-gray-200 border-0 dark:bg-gray-400"></hr>
           <FundamentalDiv name="Industry" child={details.Industry}/>
+          <hr className="h-px py-0 w-100 bg-gray-200 border-0 dark:bg-gray-400"></hr>
           <FundamentalDiv name="PE Ratio" child={details.PERatio}/>
+          <hr className="h-px py-0 w-100 bg-gray-200 border-0 dark:bg-gray-400"></hr>
           <FundamentalDiv name="EPS" child={details.EPS}/>
         </div>
         </>
