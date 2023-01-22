@@ -34,7 +34,7 @@ useEffect(()=>{
       <h1>Current Price: {quote["Global Quote"] && quote['Global Quote']['05. price']}</h1>
       <button  className={`${quote['Global Quote'] && quote['Global Quote']['10. change percent']>0 ? "bg-green-500 text-white":"bg-red-600 text-white" } rounded-md p-1`}><h4>{quote['Global Quote'] && quote['Global Quote']['10. change percent']}</h4></button>
         </div>
-        <h3 className="flex"><FcBarChart/>  {quote['Global Quote'] && quote['Global Quote']['06. volume']}</h3>
+        <h3 className="flex"><FcBarChart className="my-auto"/>  {quote['Global Quote'] && quote['Global Quote']['06. volume']}</h3>
         
         </div>
   )
