@@ -30,11 +30,12 @@ useEffect(()=>{
 
   return (
     <div className="rounded-md relative p-8 border-2 border-neutral-200">
-      <div className="flex gap-3">
-      <h1>Current Price: {quote["Global Quote"] && quote['Global Quote']['05. price']}</h1>
+      <div className="flex gap-2">
+      <h1 className="md:4xl xl:text-5xl text-2xl">{quote["Global Quote"] && quote['Global Quote']['05. price']}</h1>
+      <br></br>
       <button  className={`${quote['Global Quote'] && quote['Global Quote']['10. change percent']>0 ? "bg-green-500 text-white":"bg-red-600 text-white" } rounded-md p-1`}><h4>{quote['Global Quote'] && quote['Global Quote']['10. change percent']}</h4></button>
         </div>
-        <h3 className="flex"><FcBarChart className="my-auto"/>  {quote['Global Quote'] && quote['Global Quote']['06. volume']}</h3>
+        {/* <h3 className="flex"><FcBarChart className="my-auto"/>  {quote['Global Quote'] && quote['Global Quote']['06. volume']}</h3> */}
         
         </div>
   )
