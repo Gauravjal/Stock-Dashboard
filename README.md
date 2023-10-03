@@ -35,3 +35,5 @@ Feature List
 1) Search stock by symbol
 2) Cadlestick chart of stock
 3) Fundamental details of the stock
+4) Latest news of the stock
+5) Watchlist to store stocks
